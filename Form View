@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Send Message</title>
+</head>
+<body>
+    <form method="post" action="/send-message">
+        @csrf
+        <input type="text" name="message" placeholder="Type your message here">
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

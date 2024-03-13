@@ -1,0 +1,17 @@
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class MessageController extends Controller
+{
+    public function sendMessage(Request $request)
+    {
+        // Proses pengiriman pesan
+        $message = $request->input('message');
+        // Contoh sederhana, hanya mencetak pesan ke konsol
+        echo "Pesan yang dikirim: $message";
+
+        // Kembalikan respons sukses
+        return response()->json(['status' => 'success']);
+    }
+}

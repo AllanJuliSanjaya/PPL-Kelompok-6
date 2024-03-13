@@ -1,0 +1,23 @@
+//Dalam testing code ini, kita akan menggunakan PHPUnit, framework pengujian bawaan Laravel.
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class MessageTest extends TestCase
+{
+    /**
+     * Test pengiriman pesan.
+     *
+     * @return void
+     */
+    public function testSendMessage()
+    {
+        $response = $this->post('/send-message', ['message' => 'Hello, world']);
+
+        $response->assertStatus(200)
+                 ->assertJson(['status' => 'success']);
+    }
+}
